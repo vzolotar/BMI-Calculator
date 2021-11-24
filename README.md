@@ -6,7 +6,7 @@ BMI Calculator for android devices.
 -----
 
 ##### Tools / Languages  
-<img src="https://img.shields.io/badge/Cordova-35434F?logo=apache-cordova&logoColor=E8E8E8" /> <img src="https://img.shields.io/badge/gradle-02303A?logo=gradle&logoColor=E8E8E8" /> <img src="https://img.shields.io/badge/Android_Studio-3DDC84?logo=android-studio&logoColor=E8E8E8" /> <img src="https://img.shields.io/badge/JavaScript-323330?logo=javascript&logoColor=E8E8E8" /> <img src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=E8E8E8" />
+<img src="https://img.shields.io/badge/Cordova-35434F?logo=apache-cordova&logoColor=E8E8E8" /> <img src="https://img.shields.io/badge/gradle-02303A?logo=gradle&logoColor=E8E8E8" /> <img src="https://img.shields.io/badge/Android_Studio-3DDC84?logo=android-studio&logoColor=E8E8E8" /> <img src="https://img.shields.io/badge/JavaScript-323330?logo=javascript&logoColor=E8E8E8" /> <img src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=E8E8E8" /> <img src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=E8E8E8" />
 
 
 ##### Platform 
