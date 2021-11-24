@@ -1,0 +1,11 @@
+#mainPage{width: 400px;}
+
+#mainImage{
+	margin-left:90px;	
+}
+
+.ui-page { background: gray;}
+
+#highlight{
+background-color:yellow;
+}

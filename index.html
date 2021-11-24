@@ -1,0 +1,214 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>BMI Calculator</title>
+<link href="css/external.css" rel="stylesheet" type="text/css"/>
+<link href="css/jquery.mobile-1.2.0.min.css" rel="stylesheet" type="text/css"/>
+<link href="css/bluemo.css" rel="stylesheet" type="text/css"/>
+
+<script src="javascript/jquery-1.8.2.min.js" type="text/javascript"></script>
+<script src="javascript/jquery.mobile-1.2.0.min.js" type="text/javascript"></script>
+<script src="phonegap.js" type="text/javascript"></script>
+<script src="javascript/main.js" type="text/javascript"></script>
+<script src="javascript/modernizr-latest.js" type="text/javascript"></script>
+</head> 
+<body>
+
+<div data-role="page" id="page" class = "mainPage" data-theme="a">
+	<!--<div data-role="header" data-theme="a" align="center">
+		<h4 align="center">BMI Calculator</h4>
+		
+	</div>-->
+	
+    
+   <div data-role="content">
+		<center><h1>BMI Calculator</h1></center>
+	  
+      <a href="#bmi" data-role="button" data-theme="a">BMI Calculator</a>
+	  	  
+	  <a href="#poper" data-role="button" data-theme="a">Information</a>
+	  
+	  <a href="#about" data-role="button" data-theme="a">About</a>
+	  <br />
+	  <center><b>&nbsp;</b>
+		  
+	<tr>
+		 <th width="297" height="193" scope="col"><img src="img/logo.png" width="200" height="200"></th>
+	  </center>
+   </div>
+
+</div>
+
+
+<!--BMI Calc----------------------------------------------------- -->
+
+<div data-role="page" id="bmi" data-add-back-btn="true" data-theme="a">
+	<div data-role="header" data-theme="a">
+		<h1>BMI Calculator</h1>
+		
+	</div>
+	<div data-role="content">
+		
+		<form>
+		<p>
+		</p>
+		<table width="395" border="0">
+		  <tr>
+		    <td>Make a selection:</td>
+		    <td>&nbsp;</td>
+		    <td><select name="selector" id="selector" class="group" data-theme="a" data-native-menu="false" data-mini="true">
+				<option value="metric">Metric (meters/kilograms)</option>
+				<option value="metric2">Metric (centimeters/kilograms)</option>
+				<option value="eng">Standard (inches/pounds)</option>
+			</select></td>	  
+	      </tr>		
+		  <tr>
+		    <td width="186">Height:</td>
+		    <td width="11"><div align="left"></div></td>
+		    <td width="76"><input type="text" name="height" size="5" id="height" value="" data-theme="b"/></td>
+		    <td width="104">&nbsp;</td>
+	      </tr>	
+		  <tr>
+		    <td>Weight:</td>
+		    <td>&nbsp;</td>
+		    <td><input type="text" name="weight" size="5" id="weight" value="" data-theme="b"/></td>
+		    <td>&nbsp;</td>
+	      </tr>
+	  </table>
+			
+		<p><br />
+		  <br />
+		<button onClick="return bmiE();" data-theme="a">Calculate</button>
+		<input type="reset" value="Reset" data-theme="a" />
+	  </form>
+		<div align="center">
+		  <table width="303" border="0">
+		    <tr>
+		 <th width="297" height="193" scope="col"><img src="img/logo.png" width="200" height="200"></th>
+	        </tr>
+	      </table>
+		  <br /><br />
+	  </div>
+	
+	</div>
+</div>	
+	
+	
+	
+	
+	
+<!--Invalid Popup dialog-->
+<div id="invalid" data-role="dialog" data-title="Invalid Note" data-theme="b">
+		<div data-role="header" data-theme="e">
+
+		<h1>Error</h1>
+
+		</div>
+	<div data-role="content">
+		This entry is not a number or fields are not complete! <br />
+		<br />
+		-Only enter numbers.<br />
+		-No letters or characters.<br />
+		-Fill in both fields
+	
+		<br /><br />
+		<a href="#" data-rel="back" data-role="button" data-theme="a">Ok</a>
+	
+	
+	</div>
+
+</div>
+
+
+
+<!--Answer Popup dialog-->
+<div id="answerPop" data-role="dialog" data-title="BMI Answer" data-theme="b">
+		<div data-role="header" data-theme="a">
+			<h1>BMI Calculator</h1>
+		</div>
+	<div data-role="content">	
+		BMI Calculator:<br>
+		<center>
+		<h3><div id="answer"></div></h3>
+		<h3>Status:<br /><div id="answerOut" style="background-color: yellow"></div></h3>
+		</center>
+		<hr>
+			<b>
+			Severe thinness  -  Less than 15.99<br />
+			Moderate thinness  -  16.00 - 16.99<br />
+			Mild thinness  -  17.00-18.49<br />
+			Normal weight  -  18.50-24.99<br />
+			Overweight  -  25.00-29.99<br />
+			Obese - class I  -  30.00-34.99	<br />
+			Obese - class II  -  35.00-39.99<br />
+			Obese - class III  -  Greater than 40<br /></b>
+			<a href="#" data-rel="back" data-ajax="false" data-role="button" data-theme="a">Ok</a>
+					
+	</div>
+
+</div>
+
+
+<!--Saves page.----------------------------------------------------- -->
+
+<div data-role="page" id="saves" data-add-back-btn="true">
+	<div data-role="header" data-theme="a">
+		<h1>Saved Data</h1>
+	</div>
+	<div data-role="content">
+		<p id="message"/>
+        <ul data-role="listview" data-inset="true">
+                      
+            <li data-role="list-divider">N/A</li>
+            <li class="storeItem"/>
+        </ul>
+    </div>
+	
+</div>
+
+
+
+<!--Information page.----------------------------------------------------- -->
+
+<div data-role="page" id="poper" data-add-back-btn="true" data-theme="a">
+	<div data-role="header" data-theme="a">
+		<h1>Information</h1>
+	</div>
+	<div data-role="content">
+			<center><h3>BMI Calculator</h3>
+			</center>
+
+<p>This calculator provides body mass index (BMI) and the corresponding BMI weight status category.</p>
+</p>
+</p>
+</p>
+<center>
+  <br /><br /></center>
+<hr>
+More Information:  <a href="https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/english_bmi_calculator/bmi_calculator.html">BMI Calculator</a>
+    </div>
+	
+</div>
+
+<!--About Popup dialog-->
+<div id="about" data-role="dialog" data-title="About" data-theme="b">
+		<div data-role="header" data-theme="a">
+
+		<h1>About</h1>
+
+		</div>
+<div data-role="content">
+	BMI Calculator<br /><br />
+	Version:  <b>1.0.1</b><br /><br />
+	
+	<br /><br />
+	<a href="#" data-rel="back" data-role="button" data-theme="a">Ok</a>
+	
+	
+	</div>
+
+</div>
+
+</body>
+</html>
